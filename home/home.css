@@ -42,7 +42,8 @@
 
 .home-section-text{
     max-width: 800px;
-    padding: 40px 25px;
+    margin: 0px 25px;
+    padding: 40px 0;
     line-height: 25px;
 }
 
@@ -51,8 +52,13 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.experience-heading strong{
+    margin-right: 20px;
+}
 .experience-list{
     margin: 10px 30px;
+    color: #212121;
 }
 
 .experience-list li{
