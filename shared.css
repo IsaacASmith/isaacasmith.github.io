@@ -54,10 +54,12 @@
 
 .footer-container *{
     margin: 10px;
+    text-align: center;
 }
 
 .ext-link{
     padding: 10px 30px;
+    width: 100px;
     color: white;
     border: 1px solid white;
 }
