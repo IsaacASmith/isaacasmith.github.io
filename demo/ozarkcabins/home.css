@@ -146,7 +146,7 @@ html{
 .footer{
     background-color: #fff;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -159,6 +159,12 @@ html{
 
 .footer a{
     color: black;
+}
+
+.footer p{
+    border-top: 1px solid black;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 @media screen and (min-width: 1800px){
