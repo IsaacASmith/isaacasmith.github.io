@@ -80,6 +80,11 @@ html{
     background-color: white;
 }
 
+.switz-title{
+    margin-top: -60px;
+    text-align: center;
+}
+
 .property-title h2{
     font-weight: 500;
     font-family: 'Satisfy', sans-serif;
@@ -186,6 +191,7 @@ html{
     }
 
     #morwood{
+    background-image: url("img/morwood-mobile.jpg");
         background-attachment: scroll;
         background-size: 900px 500px;
     }
