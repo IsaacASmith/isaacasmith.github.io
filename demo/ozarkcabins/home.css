@@ -73,15 +73,14 @@ html{
 }
 
 .property-title{
-    padding: 30px;
-    border-radius: 100px;
-    margin-top: -40px;
+    padding: 25px;
+    padding-bottom: 20px;
+    border-radius: 0px 0px 30px 30px;
     position: relative;
     background-color: white;
 }
 
 .switz-title{
-    margin-top: -60px;
     text-align: center;
 }
 
@@ -130,7 +129,7 @@ html{
 }
 
 .property-content a:first-child{
-    margin-top: 175px;
+    margin-top: 200px;
 }
 
 #morwood{
