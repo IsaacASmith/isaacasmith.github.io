@@ -1,5 +1,5 @@
 html{
-    background-color: black;
+    background-color: #333;
 }
 
 .parallax-background{
@@ -10,7 +10,6 @@ html{
 
 .header-container{
     background-image: url("img/home-header-full.jpg");
-    background-color: #080808;
     background-size: 1866px 1400px;
     width: 100%;
     min-height: 300px;
@@ -47,7 +46,7 @@ html{
     font-size: 25pt;
     color: white;
     padding: 10px;
-    margin-bottom: 60px;
+    margin-bottom: 150px;
 }
 
 .down-arrow{
@@ -97,6 +96,7 @@ html{
     align-items: center;
     background-color: black;
     text-align: center;
+    background-repeat: no-repeat;
 }
 
 .property-content a{
@@ -130,12 +130,12 @@ html{
 
 #morwood{
     background-image: url("img/morwood.jpg");
-    background-size: 1700px 850px;
+    background-size: 1700px 500px;
 }
 
 #little-switz{
     background-image: url("img/switzerland.jpg");
-    background-size: 1700px 850px;
+    background-size: 1700px 500px;
 }
 
 .section-divider{
@@ -159,7 +159,6 @@ html{
 
 .footer a{
     color: black;
-
 }
 
 @media screen and (min-width: 1800px){
@@ -180,12 +179,18 @@ html{
         background-size: 800px 1052px;
     }
 
+    #morwood{
+        background-attachment: scroll;
+        background-size: 900px 500px;
+    }
+
     #little-switz{
         background-image: url("img/switzerland-mobile.jpg");
-        background-size: 1000px 819px;
+        background-size: 700px 500px;
+        background-attachment: scroll;
     }
 
     .header-container h1{
-        padding-top: 220px;
+        padding-top: 210px;
     }
 }
