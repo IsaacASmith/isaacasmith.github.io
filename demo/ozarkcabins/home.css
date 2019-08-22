@@ -1,0 +1,191 @@
+html{
+    background-color: black;
+}
+
+.parallax-background{
+    background-size: contain;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.header-container{
+    background-image: url("img/home-header-full.jpg");
+    background-color: #080808;
+    background-size: 1866px 1400px;
+    width: 100%;
+    min-height: 300px;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.header-container h1{
+    font-family: 'Satisfy', sans-serif;
+    font-size: 50pt;
+    color: white;
+    margin: 0 20px;
+    padding-top: 150px;
+    font-weight: 400;
+    padding-top: 450px;
+}
+
+.contact-link{
+    margin-top: 20px;
+    color: white;
+    font-weight: 300;
+    font-size: 20pt;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.header-container p{
+    cursor: pointer;
+    margin-top: 30px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 25pt;
+    color: white;
+    padding: 10px;
+    margin-bottom: 60px;
+}
+
+.down-arrow{
+    font-size: 40pt;
+}
+
+.property-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+    position: relative;
+}
+
+.property-header{
+    width: 100%;
+    display: flex;
+    height: 20px;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 5;
+    background-color: white;
+}
+
+.property-title{
+    padding: 30px;
+    border-radius: 100px;
+    margin-top: -40px;
+    position: relative;
+    background-color: white;
+}
+
+.property-title h2{
+    font-weight: 500;
+    font-family: 'Satisfy', sans-serif;
+    font-size: 20pt;
+    position: relative;
+    z-index: 10;
+}
+
+.property-content{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    text-align: center;
+}
+
+.property-content a{
+    margin-top: 200px;
+    color: white;
+    font-weight: 400;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 30pt;
+    opacity: 1;
+}
+
+.property-content a{
+    color: white;
+    font-weight: 400;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20pt;
+    background-color: rgb(20, 20, 20, .75);
+    padding: 10px;
+    margin-top: 25px;
+    min-width: 185px;
+}
+
+.property-content a:hover{
+    background-color: rgb(20, 20, 20, 1);
+
+}
+
+.property-content a:first-child{
+    margin-top: 175px;
+}
+
+#morwood{
+    background-image: url("img/morwood.jpg");
+    background-size: 1700px 850px;
+}
+
+#little-switz{
+    background-image: url("img/switzerland.jpg");
+    background-size: 1700px 850px;
+}
+
+.section-divider{
+    color: white;
+    height: 8px;
+}
+
+.footer{
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer *{
+    margin: 15px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 18pt;
+}
+
+.footer a{
+    color: black;
+
+}
+
+@media screen and (min-width: 1800px){
+    .header-container{
+        background-size: 2533px 1900px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .header-container{
+        background-size: 1200px 900px;
+    }
+}
+
+@media screen and (max-width: 660px){
+    .header-container{
+        background-image: url("img/home-header-mobile.jpg");
+        background-size: 800px 1052px;
+    }
+
+    #little-switz{
+        background-image: url("img/switzerland-mobile.jpg");
+        background-size: 1000px 819px;
+    }
+
+    .header-container h1{
+        padding-top: 220px;
+    }
+}
