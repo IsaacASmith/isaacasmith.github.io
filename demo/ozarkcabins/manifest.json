@@ -3,5 +3,6 @@
     "short_name": "Cabinsintheozarks",
     "start_url": ".",
     "background_color": "#ccc",
+    "theme_color": "#ccc",
     "description": "Vacation rentals in the Ozarks near Jasper, Arkansas."
 }
