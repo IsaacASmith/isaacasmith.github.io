@@ -34,6 +34,7 @@ html{
 .contact-link{
     margin-top: 20px;
     color: white;
+    padding: 5px;
     font-weight: 300;
     font-size: 20pt;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -85,8 +86,8 @@ html{
 }
 
 .property-title h2{
-    font-weight: 500;
-    font-family: 'Satisfy', sans-serif;
+    font-weight: 400;
+    font-family: 'Lobster', sans-serif;
     font-size: 20pt;
     position: relative;
     z-index: 10;
@@ -98,33 +99,23 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: black;
     text-align: center;
     background-repeat: no-repeat;
 }
 
 .property-content a{
-    margin-top: 200px;
+    margin-top: 25px;    
     color: white;
-    font-weight: 400;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 30pt;
-    opacity: 1;
-}
-
-.property-content a{
-    color: white;
-    font-weight: 400;
+    font-weight: 500;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 20pt;
-    background-color: rgb(20, 20, 20, .75);
+    background-color: rgba(20, 20, 20, .8);
     padding: 10px;
-    margin-top: 25px;
     min-width: 185px;
 }
 
 .property-content a:hover{
-    background-color: rgb(20, 20, 20, 1);
+    background-color: rgba(20, 20, 20, 1);
 
 }
 
@@ -171,9 +162,25 @@ html{
     padding-bottom: 20px;
 }
 
-@media screen and (min-width: 1800px){
+@media screen and (min-width: 1650px){
     .header-container{
         background-size: 2533px 1900px;
+    }
+
+    .property-content {
+        height: 700px;
+    }
+
+    .property-content a:first-child{
+        margin-top: 300px;
+    }
+
+    #morwood{
+        background-size: 2100px 750px;
+    }
+    
+    #little-switz{
+        background-size: 2100px 750px;
     }
 }
 
