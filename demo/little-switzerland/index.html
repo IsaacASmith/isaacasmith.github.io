@@ -19,14 +19,16 @@
         <h2>Cabin Vacation Rentals</h2>
     </section>
     <div class="mobile-nav-header">
-        <img src="img/hamburger.svg" height=30 width=30>
+        <img src="img/hamburger.svg" id="open-nav-btn" class="nav-btn" height=30 width=30 onclick="showNav()">
+        <img src="img/close-nav.svg" id="close-nav-btn" class="nav-btn" height=30 width=30 onclick="hideNav()">
     </div>
-    <nav>
+    <nav id="top-nav">
         <a href="#Home">Home</a>
         <a href="#">Cabins</a>
         <a href="#">History</a>
         <a href="#">Area Info</a>
         <a href="#">Nearby</a>
+        <a href="#">Reservations</a>
     </nav>
     <main class="body-content">
         <section class="section home-section">
@@ -80,4 +82,5 @@
             <p>&copy;2019 - Cabins in the Ozarks</p>
         </footer>
     </main>
+    <script src="index/index.js"></script>
 </body>
