@@ -2,9 +2,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 50px 10px;
     color: white;
     background-color: #333;
+    text-align: center;
 }
 
 .page-header h1{
@@ -16,7 +18,6 @@
 .page-header h2{
     font-size: 16pt;
     margin-top: 10px;
-    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 nav {
@@ -25,10 +26,13 @@ nav {
     box-shadow: 0 0 5px #222;
 }
 
+.mobile-nav-header{
+    display: none;
+}
+
 nav a{
     color: black;
     padding: 20px;
-    font-family: 'Open Sans Condensed', sans-serif;
     font-size: 16pt;
 }
 
@@ -60,12 +64,19 @@ nav a:hover{
     max-width: 40%;
     font-size: 18pt;
     font-family: 'Open Sans Condensed', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.home-vert-divider{
-    height: 100%;
-    width: 1px;
+.book-now-link{
+    padding: 15px;
+    border-radius: 25;
     background-color: #444;
+    color: white;
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: -10px;
 }
 
 .home-image {
@@ -79,15 +90,38 @@ nav a:hover{
 }
 
 .home-section-2{
-    height: 200px;
     display: flex;
-    align-items: space-between;
-    justify-content: space-between;
-    width: 100%;
+    align-items: space-around;
+    justify-content: space-around;
+    width: 1200px;
+    margin: 0 50px;
+    font-size: 16pt;
 }
 
-.home-section-2 p{
-    width: 200px;
+.home-section-2 div{
+    width: 210px;
+}
+
+.home-section-2 div:last-child{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-section-2 div img{
+    margin-bottom: 20px;
+}
+
+.page-footer{
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+.page-footer *{
+    padding: 5px;
+    font-size: 15pt;
 }
 
 @media screen and (max-width: 1300px) {
@@ -106,5 +140,37 @@ nav a:hover{
     }
     .home-image{
         max-width: 85%;
+    }
+
+    .home-section-2{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .home-section-2 div{
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 25px;
+        width: 65%;
+    }
+
+    .home-section-2 div img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 460px){
+    nav{
+        flex-direction: column;
+        display: none;
+    }
+
+    .mobile-nav-header{
+        display: flex;
+        padding: 20px;
+        justify-content: flex-end;
+        box-shadow: 0 0 10px #222;
     }
 }
