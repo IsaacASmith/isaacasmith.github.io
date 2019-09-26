@@ -183,7 +183,13 @@ nav a:hover{
         display: flex;
         padding: 20px;
         justify-content: flex-end;
+        align-items: center;
         box-shadow: 0 0 10px #222;
+        font-size: 20pt;
+    }
+
+    .menu-label{
+        padding-left: 7px;
     }
 
     .home-section-2 div {
