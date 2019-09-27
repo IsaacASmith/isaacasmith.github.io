@@ -57,7 +57,7 @@
     background-color: #444;
     color: white;
     padding: 10px 20px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .sub-section-content{
@@ -90,10 +90,10 @@
     height: 243px;
 }
 
-.cancellation-policy{
+.end-section{
     max-width: 1300px;
-    margin-top: 150px;
-    margin-bottom: -50px;
+    margin-top: 130px;
+    margin-bottom: -80px;
 }
 
 @media screen and (max-width: 1000px){
@@ -111,7 +111,7 @@
         max-width: 85%;
     }
 
-    .cabin-header{
+    .cabin-header:first-child{
         margin-top: 40px;
     }
 }
