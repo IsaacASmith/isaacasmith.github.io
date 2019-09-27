@@ -10,28 +10,49 @@
     <link href="manifest.json" rel="manifest">
     <link href="../defaults.css?v=01" rel="stylesheet">
     <link href="../shared.css" rel="stylesheet">
-    <link href="./cabins.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Satisfy|Courgette" rel="stylesheet">
 </head>
 
 <body>
-    <section class="page-header">
-        <h1>Little Switzerland</h1>
-        <h2>Cabin Vacation Rentals</h2>
-    </section>
-    <div class="mobile-nav-header">
-        <img src="img/hamburger.svg" id="open-nav-btn" class="nav-btn" height=30 width=30 onclick="toggleNav()">
-        <img src="img/close-nav.svg" id="close-nav-btn" class="nav-btn" height=30 width=30 onclick="toggleNav()">
-        <label class="menu-label" onclick="toggleNav()">MENU</label>
-    </div>
-    <nav id="top-nav">
-        <a href="../index.html">Home</a>
-        <a href="../cabins/index.html">Cabins</a>
-        <a href="../nearby/index.html">Nearby</a>
-        <a href="../history/index.html">History</a>
-        <a href="#">Reservations</a>
-    </nav>
+        <section class="page-header">
+            <h1>Little Switzerland</h1>
+            <h2>Cabin Vacation Rentals</h2>
+        </section>
+        <div class="mobile-nav-header">
+            <img src="../img/hamburger.svg" id="open-nav-btn" class="nav-btn" height=30 width=30 onclick="toggleNav()">
+            <img src="../img/close-nav.svg" id="close-nav-btn" class="nav-btn" height=30 width=30 onclick="toggleNav()">
+            <label class="menu-label" onclick="toggleNav()">MENU</label>
+        </div>
+        <nav id="top-nav">
+            <a href="../index.html">Home</a>
+            <a href="../cabins/index.html" id="cabins-link" onmouseover="cabinsHovered()" onmouseout="cabinsUnHovered()">Cabins</a>
+            <div class="cabin-options-mobile">
+                <a href="../cabins/index.html#cabin1">The Cozy Two Story Cabin</a>
+                <a href="../cabins/index.html#cabin2">The Split Level</a>
+                <a href="../cabins/index.html#cabin3">The Mini-Motel Room #3</a>
+                <a href="../cabins/index.html#cabin4">The Mini-Motel Room #4</a>
+                <a href="../cabins/index.html#cabin5">The Mini-Motel Room #5</a>
+                <a href="../cabins/index.html#amenities">Amenities</a>
+            </div>
+            <a href="../nearby/index.html">Nearby</a>
+            <a href="../history/index.html">History</a>
+            <a href="#">Reservations</a>
+        </nav>
+        <div id="cabin-options">
+            <a href="../cabins/index.html#cabin1" onmouseover="cabinOptionsHovered()" onmouseout="cabinOptionsUnHovered()">
+                The Cozy Two Story Cabin</a>
+            <a href="../cabins/index.html#cabin2" onmouseover="cabinOptionsHovered()" onmouseout="cabinOptionsUnHovered()">
+                The Split Level</a>
+            <a href="../cabins/index.html#cabin3" onmouseover="cabinOptionsHovered()" onmouseout="cabinOptionsUnHovered()">
+                The Mini-Motel | Room #3</a>
+            <a href="../cabins/index.html#cabin4" onmouseover="cabinOptionsHovered()" onmouseout="cabinOptionsUnHovered()">
+                The Mini-Motel | Room #4</a>
+            <a href="../cabins/index.html#cabin5" onmouseover="cabinOptionsHovered()" onmouseout="cabinOptionsUnHovered()">
+                The Mini-Motel | Room #5</a>
+            <a href="../cabins/index.html#amenities" onmouseover="cabinOptionsHovered()" onmouseout="cabinOptionsUnHovered()">Amenities</a>
+        </div>
     <main class="body-content">
 
     </main>
+    <script src="../shared.js"></script>
 </body>

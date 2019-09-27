@@ -26,14 +26,30 @@
     </div>
     <nav id="top-nav">
         <a href="../index.html">Home</a>
-        <a href="#">Cabins</a>
+        <a href="#" id="cabins-link" onmouseover="cabinsHovered()" onmouseout="cabinsUnHovered()">Cabins</a>
+        <div class="cabin-options-mobile">
+            <a href="#cabin1">The Cozy Two Story Cabin</a>
+            <a href="#cabin2">The Split Level</a>
+            <a href="#cabin3">The Mini-Motel Room #3</a>
+            <a href="#cabin4">The Mini-Motel Room #4</a>
+            <a href="#cabin5">The Mini-Motel Room #5</a>
+            <a href="#amenities">Amenities</a>
+        </div>
         <a href="../nearby/index.html">Nearby</a>
         <a href="../history/index.html">History</a>
         <a href="../reservations/index.html">Reservations</a>
     </nav>
+    <div id="cabin-options">
+        <a href="#cabin1" onmouseover="cabinOptionsHovered()" onmouseout="cabinOptionsUnHovered()">The Cozy Two Story Cabin</a>
+        <a href="#cabin2" onmouseover="cabinOptionsHovered()" onmouseout="cabinOptionsUnHovered()">The Split Level</a>
+        <a href="#cabin3" onmouseover="cabinOptionsHovered()" onmouseout="cabinOptionsUnHovered()">The Mini-Motel | Room #3</a>
+        <a href="#cabin4" onmouseover="cabinOptionsHovered()" onmouseout="cabinOptionsUnHovered()">The Mini-Motel | Room #4</a>
+        <a href="#cabin5" onmouseover="cabinOptionsHovered()" onmouseout="cabinOptionsUnHovered()">The Mini-Motel | Room #5</a>
+        <a href="#amenities" onmouseover="cabinOptionsHovered()" onmouseout="cabinOptionsUnHovered()">Amenities</a>
+    </div>
     <main class="body-content">
-        <h2 id="page-header">Cabins</h2>
-        <section id="cabin1" class="cabin-section">
+        <h2 id="cabin1" class="cabin-page-header">Cabins</h2>
+        <section class="cabin-section">
             <div class="cabin-main-info">
                 <div class="cabin-main-info-text">
                     <h3 class="cabin-header">Cabin 1 - The Cozy Two Story Cabin</h3>
@@ -81,8 +97,8 @@
                 </div>
             </div>
         </section>
-        <hr class="section-divider" />
-        <section id="cabin2" class="cabin-section">
+        <hr id="cabin2" class="section-divider" />
+        <section class="cabin-section">
             <div class="cabin-main-info">
                 <div class="cabin-main-info-text">
                     <h3 class="cabin-header">Cabin 2 - The Split Level</h3>
@@ -102,17 +118,17 @@
                 [IMAGES NEEDED]
             </div>
         </section>
-        <hr class="section-divider" />
-        <section id="cabin3" class="cabin-section">
+        <hr id="cabin3" class="section-divider" />
+        <section class="cabin-section">
             <div class="cabin-main-info">
                 <div class="cabin-main-info-text">
                     <h3 class="cabin-header">The Mini-Motel</h3>
                     <h3 class="cabin-header">Room #3</h3>
                     <p class="cabin-main-p">
                         A mini-motel with three individual rooms.
-                        <br/>
-                        <br/>
-                        This room has a queen bed and full bath. Perfect for a 
+                        <br />
+                        <br />
+                        This room has a queen bed and full bath. Perfect for a
                         family or couples traveling together who want their own privacy.
                         <br />
                         <a href="#" class="book-now-link">BOOK NOW &#8699;</a>
@@ -124,7 +140,7 @@
             </div>
             <div class="cabin-sub-section cabin-images">
                 <div class="image-container">
-                    <img src="../img/cabin_3_A.JPG" class="cabin-image" />
+                    <img src="../img/cabin_3_A.jpg" class="cabin-image" />
                 </div>
                 <div class="image-container">
                     <img src="../img/cabin_3_D.jpg" class="cabin-image vert-image" />
@@ -140,14 +156,14 @@
                 </div>
             </div>
         </section>
-        <hr class="section-divider" />
-        <section id="cabin4" class="cabin-section">
+        <hr id="cabin4" class="section-divider" />
+        <section class="cabin-section">
             <div class="cabin-main-info">
                 <div class="cabin-main-info-text">
                     <h3 class="cabin-header">The Mini-Motel</h3>
                     <h3 class="cabin-header">Room #4</h3>
                     <p class="cabin-main-p">
-                        This room has a queen bed and full bath. Perfect for a family 
+                        This room has a queen bed and full bath. Perfect for a family
                         or couples traveling together who want their own privacy.
                         <br />
                         <a href="#" class="book-now-link">BOOK NOW &#8699;</a>
@@ -159,7 +175,7 @@
             </div>
             <div class="cabin-sub-section cabin-images">
                 <div class="image-container">
-                    <img src="../img/cabin_4_A.JPG" class="cabin-image" />
+                    <img src="../img/cabin_4_A.jpg" class="cabin-image" />
                 </div>
                 <div class="image-container">
                     <img src="../img/cabin_4_B.jpg" class="cabin-image vert-image" />
@@ -175,15 +191,15 @@
                 </div>
             </div>
         </section>
-        <hr class="section-divider" />
-        <section id="cabin5" class="cabin-section">
+        <hr id="cabin5" class="section-divider" />
+        <section class="cabin-section">
             <div class="cabin-main-info">
                 <div class="cabin-main-info-text">
                     <h3 class="cabin-header">The Mini-Motel</h3>
                     <h3 class="cabin-header">Room #5</h3>
                     <p class="cabin-main-p">
-                        This upstairs unit offers the same privacy as an individual cabin. 
-                        It's a very large room with a queen bed and two twin day beds. 
+                        This upstairs unit offers the same privacy as an individual cabin.
+                        It's a very large room with a queen bed and two twin day beds.
                         Full bath and large balcony.
                         <br />
                         <a href="#" class="book-now-link">BOOK NOW &#8699;</a>
@@ -196,7 +212,7 @@
             </div>
             <div class="cabin-sub-section cabin-images">
                 <div class="image-container">
-                    <img src="../img/cabin_5_A.JPG" class="cabin-image" />
+                    <img src="../img/cabin_5_A.jpg" class="cabin-image" />
                 </div>
                 <div class="image-container">
                     <img src="../img/cabin_5_E.jpg" class="cabin-image vert-image" />
@@ -212,7 +228,7 @@
                 </div>
             </div>
         </section>
-        <div class="cabin-sub-section end-section">
+        <div id="amenities" class="cabin-sub-section end-section">
             <h4 class="sub-section-header">Amenities for all Cabins/Rooms</h4>
             <p class="sub-section-content">
                 &#8699;&nbsp;Coffee Pots
@@ -229,7 +245,7 @@
                 <br />
                 &#8699;&nbsp;Complimentary Juice and Coffee in the Rooms
                 <br />
-                &#8699;&nbsp;No Kitchen in this cabin
+                &#8699;&nbsp;No Kitchen in cabins
             </p>
         </div>
         <div class="cabin-sub-section end-section">
@@ -244,8 +260,6 @@
                 <br />
                 If you do not call to cancel and do not show up for your reservation, you are responsible for the
                 Full amount of your stay.
-                <br />
-                <br />
             </p>
         </div>
         <hr class="section-divider" />

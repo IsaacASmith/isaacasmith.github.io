@@ -14,3 +14,41 @@ function toggleNav(){
     
     navDisplayed = !navDisplayed;
 }
+
+var cabinsLinkHovered = false;
+var cabinOptionsLinksHovered = false;
+
+function cabinsHovered(){
+    if(window.innerWidth < 600){
+        return;
+    }
+    cabinsLinkHovered = true;
+    document.getElementById("cabin-options").style.display = 'flex';
+}
+
+function cabinsUnHovered(){
+    cabinsLinkHovered = false;
+    if(window.innerWidth < 600 || cabinOptionsLinksHovered){
+        return;
+    }
+    console.log("hiding");
+    document.getElementById("cabin-options").style.display = 'none';
+}
+
+function cabinOptionsHovered(){
+    if(window.innerWidth < 600){
+        return;
+    }
+    cabinOptionsLinksHovered = true;
+    document.getElementById("cabin-options").style.display = 'flex';
+}
+
+function cabinOptionsUnHovered(){
+    cabinOptionsLinksHovered = false;
+    if(window.innerWidth < 600 || cabinsLinkHovered){
+        return;
+    }
+    console.log("hiding");
+    document.getElementById("cabin-options").style.display = 'none';
+}
+

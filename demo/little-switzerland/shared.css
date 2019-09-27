@@ -42,15 +42,45 @@ nav {
     cursor: pointer;
 }
 
-nav a{
+nav a, #cabin-options a{
     color: black;
     padding: 20px;
     font-size: 16pt;
 }
 
-nav a:hover{
+nav a:hover, #cabin-options a:hover{
     color: white;
     background-color: #444;
+}
+
+#cabin-options{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+}
+
+#cabin-options a{
+    border-left: 1px solid #888;
+    border-right: 1px solid #888;
+    width: 300px;
+    background-color: white;
+    margin-left: 20px;
+}
+
+#cabin-options a:first-child{
+    border-top: 1px solid #888;
+}
+
+#cabin-options a:last-child{
+    border-bottom: 1px solid #888;
+}
+
+.cabin-options-mobile{
+    display: none;
+    flex-direction: column;
+    margin-left: 50px;
 }
 
 .body-content{
@@ -101,5 +131,9 @@ nav a:hover{
 
     .menu-label{
         padding-left: 7px;
+    }
+
+    .cabin-options-mobile{
+        display: flex;
     }
 }
