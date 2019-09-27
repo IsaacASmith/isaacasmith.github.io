@@ -9,6 +9,7 @@
     <meta name="theme-color" content="#111" />
     <link href="manifest.json" rel="manifest">
     <link href="defaults.css?v=01" rel="stylesheet">
+    <link href="./shared.css" rel="stylesheet">
     <link href="./index/index.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Satisfy|Courgette" rel="stylesheet">
 </head>
@@ -24,12 +25,11 @@
         <label class="menu-label" onclick="toggleNav()">MENU</label>
     </div>
     <nav id="top-nav">
-        <a href="#Home">Home</a>
-        <a href="#">Cabins</a>
-        <a href="#">History</a>
-        <a href="#">Area Info</a>
-        <a href="#">Nearby</a>
-        <a href="#">Reservations</a>
+        <a href="#">Home</a>
+        <a href="./cabins/index.html">Cabins</a>
+        <a href="./nearby/index.html">Nearby</a>
+        <a href="./history/index.html">History</a>
+        <a href="./reservations/index.html">Reservations</a>
     </nav>
     <main class="body-content">
         <section class="section home-section">
@@ -70,9 +70,9 @@
             </div>
             <div>
                 <img src="img/cabin_1_balcony.jpg" width=210/>
-                <a href="mailto:mmowen213@gmail.com" class="book-now-link">CONTACT US &#8699;</a>
-                <br />
                 <a href="#" class="book-now-link">BOOK NOW &nbsp;&#8699;</a>
+                <br />
+                <a href="mailto:mmowen213@gmail.com" class="book-now-link">CONTACT US &#8699;</a>
             </div>
         </section>
         <hr class="section-divider" />
@@ -83,5 +83,5 @@
             <p>&copy;2019 - Cabins in the Ozarks</p>
         </footer>
     </main>
-    <script src="index/index.js"></script>
+    <script src="./shared.js"></script>
 </body>
