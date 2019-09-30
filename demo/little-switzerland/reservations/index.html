@@ -10,6 +10,7 @@
     <link href="../manifest.json" rel="manifest">
     <link href="../defaults.css?v=01" rel="stylesheet">
     <link href="../shared.css" rel="stylesheet">
+    <link href="reservations.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Satisfy|Courgette" rel="stylesheet">
 </head>
 
@@ -54,8 +55,96 @@
             onmouseout="cabinOptionsUnHovered()">Amenities</a>
     </div>
     <main class="body-content">
-
+        <h2>Reservation Request</h2>
+        <form>
+            <div class="input-container">
+                <label>Name</label>
+                <input type="text" name="name" required />
+            </div>
+            <div class="input-container">
+                <label>Address</label>
+                <input type="text" name="address" required />
+            </div>
+            <div class="input-container">
+                <label>City/State</label>
+                <input type="text" name="citystate" required />
+            </div>
+            <div class="input-container">
+                <label>Zip Code</label>
+                <input type="text" name="zip" required />
+            </div>
+            <div class="input-container">
+                <label>Email</label>
+                <input type="email" name="email" required />
+            </div>
+            <div class="input-container">
+                <label>Phone</label>
+                <input type="tel" name="phone" required />
+            </div>
+            <div class="input-container">
+                <label># of Adults</label>
+                <input type="text" name="adultnumber" required />
+            </div>
+            <div class="input-container">
+                <label># of Children</label>
+                <input type="text" name="childrennumber" required />
+            </div>
+            <div class="input-container">
+                <label>Cabin(s)</label>
+                <div class="radio-container">
+                    <div class="checkbox-option">
+                        <input type="checkbox" name="cabin1" value="1" />
+                        <label>Cabin 1 - The Cozy Two Story Cabin</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" name="cabin2" value="2" />
+                        <label>Cabin 2 - The Split Level</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" name="cabin3" value="3" />
+                        <label>Room 3 - The Mini Motel</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" name="cabin4" value="4" />
+                        <label>Room 4 - The Mini Motel</label>
+                    </div>
+                    <div class="checkbox-option">
+                        <input type="checkbox" name="cabin5" value="5" />
+                        <label>Room 5 - The Mini Motel</label>
+                    </div>
+                </div>
+            </div>
+            <div class="input-container">
+                <label>Arrival Date</label>
+                <input type="date" name="arrivaldate" required />
+            </div>
+            <div class="input-container">
+                <label>Departure Date</label>
+                <input type="date" name="departuredate" required />
+            </div>
+            <div class="input-container">
+                <label>Any Pets?</label>
+                <div class="radio-container">
+                    <div class="radio-option">
+                        <input type="radio" name="pets" value="1" />
+                        <label>Yes</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" name="pets" value="0" />
+                        <label>No</label>
+                    </div>
+                </div>
+            </div>
+            <div class="input-container">
+                <label>Any comments?</label>
+                <textarea rows="4" name="comments"></textarea>
+            </div>
+            <div class="submit-container">
+                <input type="submit" value="Submit" />
+            </div>
+        </form>
     </main>
+    <hr class="section-divider" />
     <footer class="page-footer">
         <label>CONTACT</label>
         <a href="mailto:ltlswitz@ritternet.com">ltlswitz@ritternet.com</a>
@@ -63,4 +152,5 @@
         <p>&copy; 2019 - Cabins in the Ozarks</p>
     </footer>
     <script src="../shared.js"></script>
+    <script src="reservations.js"></script>
 </body>

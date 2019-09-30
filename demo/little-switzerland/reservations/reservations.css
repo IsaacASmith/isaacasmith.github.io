@@ -1,0 +1,99 @@
+.body-content h2{
+    margin-bottom: 40px;
+}
+
+.input-container {
+    display: flex;
+    margin: 20px 0;
+    font-size: 16pt;
+}
+
+.input-container label{
+    width: 150px;
+}
+
+.input-container input,
+.input-container textarea{
+    width: 450px;
+    font-size: 16pt;
+    border: 1px solid #ccc;
+    padding-left: 2px;
+}
+
+.radio-container{
+    display: flex;
+    width: 300px;
+    flex-direction: column;
+}
+
+.radio-option {
+    display: flex;
+    width: 100px;
+    align-items: center;
+}
+
+.checkbox-option:first-child{
+    margin-top: 2px;
+}
+
+.checkbox-option{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-option input {
+    width: 100px;
+}
+
+.checkbox-option label {
+    width: 400px;
+}
+
+.submit-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.submit-container input{
+    font-size: 18pt;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+    border: none
+}
+
+.section-divider{
+    width: 95%;
+    max-width: 1000px;
+    margin: 70px auto;
+}
+
+
+@media screen and (max-width: 650px){
+    .input-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-container input,
+    .input-container textarea{
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 360px){
+    .input-container input,
+    .input-container textarea{
+        width: 300px;
+        font-size: 14pt;
+    }
+
+    .input-container{
+        font-size: 14pt;
+    }
+}
