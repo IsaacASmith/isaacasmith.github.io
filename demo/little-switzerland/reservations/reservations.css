@@ -84,6 +84,14 @@
     .input-container textarea{
         width: 350px;
     }
+
+    .checkbox-option input {
+        width: 100px;
+    }
+    
+    .checkbox-option label {
+        width: 200px;
+    }
 }
 
 @media screen and (max-width: 360px){
@@ -95,5 +103,13 @@
 
     .input-container{
         font-size: 14pt;
+    }
+
+    .checkbox-option input {
+        width: 100px;
+    }
+    
+    .checkbox-option label {
+        width: 200px;
     }
 }
