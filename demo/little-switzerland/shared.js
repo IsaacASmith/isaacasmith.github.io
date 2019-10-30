@@ -31,7 +31,6 @@ function cabinsUnHovered(){
     if(window.innerWidth < 600 || cabinOptionsLinksHovered){
         return;
     }
-    console.log("hiding");
     document.getElementById("cabin-options").style.display = 'none';
 }
 
@@ -48,7 +47,6 @@ function cabinOptionsUnHovered(){
     if(window.innerWidth < 600 || cabinsLinkHovered){
         return;
     }
-    console.log("hiding");
     document.getElementById("cabin-options").style.display = 'none';
 }
 

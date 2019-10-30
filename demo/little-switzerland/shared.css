@@ -59,6 +59,7 @@ nav a:hover, #cabin-options a:hover{
     align-items: center;
     width: 100%;
     position: absolute;
+    margin-left: -90px;
 }
 
 #cabin-options a{
@@ -110,7 +111,7 @@ nav a:hover, #cabin-options a:hover{
     width: 1300px;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 700px){
     nav{
         flex-direction: column;
         display: none;
