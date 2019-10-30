@@ -10,6 +10,10 @@
     font-size: 15pt;
 }
 
+.group-header{
+    margin-bottom: 30px;
+}
+
 .group-image{
     width: 326px;
     height: 243px;
