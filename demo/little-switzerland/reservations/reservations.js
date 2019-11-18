@@ -27,7 +27,7 @@ function submitReservation()
     document.getElementById('loading-indicator').style.display = 'block';
 
     var request = new XMLHttpRequest();
-    request.open("POST", "http://localhost:7071/api/EmailReservation");
+    request.open("POST", "https://switz-email-handler.azurewebsites.net/api/EmailReservation");
 
     var formData = {
         name: document.getElementsByName('name')[0].value,
