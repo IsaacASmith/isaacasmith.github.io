@@ -58,7 +58,7 @@
     </div>
     <main class="body-content">
         <h2>Reservation Request</h2>
-        <form>
+        <form id="reservation-form" onsubmit="submitReservation(); return false;">
             <div class="input-container">
                 <label>Name</label>
                 <input type="text" name="name" required />
@@ -85,11 +85,11 @@
             </div>
             <div class="input-container">
                 <label># of Adults</label>
-                <input type="text" name="adultnumber" required />
+                <input type="number" name="adultnumber" required />
             </div>
             <div class="input-container">
                 <label># of Children</label>
-                <input type="text" name="childrennumber" required />
+                <input type="number" name="childrennumber" required />
             </div>
             <div class="input-container">
                 <label>Cabin(s)</label>
@@ -142,9 +142,21 @@
                 <textarea rows="4" name="comments"></textarea>
             </div>
             <div class="submit-container">
-                <input type="submit" value="Submit" />
+                <p id="server-error-text" class="error-text">There was an error submitting the reservation, please try again later.</p>
+                <p id="user-error-text" class="error-text">There was an error submitting the reservation, please try again later.</p>                
+                <input type="submit" value="Submit" id="submit-reservation"/>
+                <img id="loading-indicator" src="../img/loading.svg" width=50 height=50 />
             </div>
         </form>
+        <div id="reservation-complete">
+            <h3>Reservation Request Received</h3>
+            <br/>
+            <p>Thank you for submitting a reservation request. We have received it and will be
+               contacting you for finalizing the reservation.
+               <br/><br/>
+               Feel free to contact us at any time with further questions.
+            </p>
+        </div>
     </main>
     <hr class="section-divider" />
     <footer class="page-footer">

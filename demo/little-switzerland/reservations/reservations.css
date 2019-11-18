@@ -53,6 +53,7 @@
 .submit-container{
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top: 60px;
@@ -112,4 +113,23 @@
     .checkbox-option label {
         width: 200px;
     }
+}
+
+.error-text{
+    color: red;
+    margin-bottom: 30px;
+    font-weight: 700;
+    display:none;
+}
+
+#loading-indicator{
+    display: none;
+}
+
+#reservation-complete{
+    display: none;
+}
+
+#reservation-complete h3{
+    color: green;
 }
