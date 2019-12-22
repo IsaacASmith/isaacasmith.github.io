@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     color: white;
+    font-family: 'Amatic SC', sans-serif;
 }
 
 .body{
@@ -10,34 +11,81 @@
     background-size: 200px 200px;
 }
 
-.title-container{
+.title-container textPath{
     font-family: 'Dancing Script', sans-serif;
     font-size: 30pt;
+    margin-top: -30px;
 }
 
 text{
     fill: white;
-    text-shadow: 0 0 50px #ddd;
+    text-shadow: 1px 1px 3px #000;
 }
 
-.page-container{
+.intro-image{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.content-wrapper{
+    width: 100%;
+    margin-top: -25vw;
+}
+
+.content-section{
     width: 100%;
     display: flex;
-    justify-content: center;
-    font-family: 'Amatic SC', sans-serif;
-    margin-top: -75vw;
-    font-size: 20pt;
-    text-align: center;
-    font-weight: 800;
+    flex-direction: column;
+    align-items: center;
 }
 
-.page-container h2{
+
+.content-section p{
+    font-size: 20pt;
     border-bottom: 1px solid white;
     text-shadow: 0 0 30px #ddd;
+    padding-bottom: 10px;
+    padding-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.content-section img{
+    width: 100%;
+}
+
+.content-section a{
+    font-size: 20pt;
+}
+
+.full-height{
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
 }
 
 @media screen and (max-width: 736px){
     .page-container h2{
-        font-size: 10pt;
+        font-size: 15pt;
+    }
+
+    .content-wrapper{
+        margin-top: -25vw;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .title-container{
+        margin-top: -10px;
+    }
+
+    .content-wrapper{
+        margin-top: -22vw;
     }
 }
