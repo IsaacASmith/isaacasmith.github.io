@@ -45,7 +45,7 @@ text{
 
 
 .content-section p{
-    font-size: 20pt;
+    font-size: 50pt;
     border-bottom: 1px solid white;
     text-shadow: 0 0 30px #ddd;
     padding-bottom: 10px;
@@ -61,7 +61,7 @@ text{
 }
 
 .content-section a{
-    font-size: 20pt;
+    font-size: 50pt;
 }
 
 .full-height{
