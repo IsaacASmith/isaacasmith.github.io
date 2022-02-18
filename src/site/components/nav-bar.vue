@@ -4,7 +4,8 @@
       <img
         src="~/assets/img/me.jpg"
         width="50"
-        alt="Isaac Smith"
+        height="50"
+        alt="Headshot of Isaac Smith"
         class="mr-4 md:mr-5 inline profile-img"
       />
       <div class="text-primary font-bold inline text-xl md:text-2xl">
