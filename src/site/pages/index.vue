@@ -18,7 +18,7 @@
     <section class="grid grid-cols-12 gap-8 mt-10 sm:mt-20 sm:mx-3">
       <nuxt-link
         to="/blog"
-        class="col-span-12 sm:col-span-6 bg-white rounded p-4 sm:p-6 pt-12 sm:pt-12 flex flex-col items-center mx-2 sm:mx-0"
+        class="col-span-12 sm:col-span-6 bg-white rounded p-4 sm:p-6 pt-12 flex flex-col items-center mx-2 sm:mx-0"
       >
         <img
           src="~/assets/img/blog.svg"
@@ -34,7 +34,7 @@
       </nuxt-link>
       <nuxt-link
         to="/projects"
-        class="col-span-12 sm:col-span-6 bg-white rounded p-4 sm:p-6 pt-12 sm:pt-12 flex flex-col items-center mx-2 sm:mx-0"
+        class="col-span-12 sm:col-span-6 bg-white rounded p-4 sm:p-6 pt-12 flex flex-col items-center mx-2 sm:mx-0"
       >
         <img
           src="~/assets/img/projects.svg"

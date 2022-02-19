@@ -54,7 +54,7 @@ export default {
 
   css: [],
 
-  plugins: [],
+  plugins: ['@/plugins/dateUtils.js'],
 
   components: true,
 
