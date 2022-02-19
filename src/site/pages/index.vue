@@ -13,7 +13,7 @@
       class="flex flex-col justify-center items-center mt-4 sm:max-w-sm max-w-xl m-auto"
     >
       <h1 class="text-3xl">Hi! I'm Isaac.</h1>
-      <div class="mt-1">I flip bits to make people happy.</div>
+      <div class="mt-1">I flip bits to solve problems.</div>
     </section>
     <section class="grid grid-cols-12 gap-8 mt-10 sm:mt-20 sm:mx-3">
       <nuxt-link

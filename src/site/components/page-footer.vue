@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white p-10">
+  <footer class="bg-white p-10">
     <div class="max-w-4xl mx-auto px-0 sm:px-8 md:px-12">
       <div class="grid grid-cols-2 gap-8">
         <div class="col-span-2 sm:col-span-1">
@@ -34,5 +34,5 @@
         >
       </div>
     </div>
-  </div>
+  </footer>
 </template>

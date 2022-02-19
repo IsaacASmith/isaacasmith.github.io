@@ -16,14 +16,14 @@
       </div>
     </nuxt-link>
     <span class="float-right flex flex-row justify-center items-center">
-      <nuxt-link to="/coming-soon" class="md:mr-3">
+      <nuxt-link to="/blog" class="md:mr-3">
         <div
           class="text-primary inline text-base md:text-xl px-2 md:px-3 py-4 hover:underline"
         >
           Blog
         </div>
       </nuxt-link>
-      <nuxt-link to="/coming-soon">
+      <nuxt-link to="/projects">
         <div class="inline text-base md:text-xl px-2 md:px-3 py-4 hover:underline">
           Projects
         </div>
