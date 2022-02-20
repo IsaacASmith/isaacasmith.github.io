@@ -49,6 +49,15 @@ export default {
         content: 'A person on their smartphone shopping for gifts to share',
       },
     ],
+    script: [
+      {
+        hid: 'fathom',
+        src: 'https://cdn.usefathom.com/script.js',
+        defer: true,
+        'data-site': 'XGBKSFUH',
+        'data-spa': true
+      },
+    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
   },
 

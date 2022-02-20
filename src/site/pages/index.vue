@@ -23,7 +23,7 @@
         <img
           src="~/assets/img/blog.svg"
           width="90"
-          alt="Science beaker"
+          alt="Book icon"
           class="block"
         />
         <div class="text-xl font-semibold mt-5">The Blog</div>
@@ -39,7 +39,7 @@
         <img
           src="~/assets/img/projects.svg"
           width="100"
-          alt="Science beaker"
+          alt="Science beaker icon"
           class="block"
         />
         <div class="text-xl font-semibold mt-5">Projects</div>

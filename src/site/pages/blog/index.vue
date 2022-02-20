@@ -4,7 +4,7 @@
       <img
         src="~/assets/img/blog.svg"
         width="90"
-        alt="Science beaker"
+        alt="Book icon"
         class="block"
       />
       <h1 class="text-2xl font-semibold mt-4">The Blog</h1>
@@ -14,8 +14,11 @@
         come from my experiences as a software engineering consultant working
         with a variety of businesses across many sectors of the economy.
       </div>
+      <div class="mt-16 text-3xl">
+        Coming Soon!
+      </div>
     </section>
-    <section class="sm:mx-3">
+    <!-- <section class="sm:mx-3">
       <div class="grid grid-cols-12 gap-4 mt-8 mx-3 md:mx-0">
         <input
           placeholder="Search posts..."
@@ -55,7 +58,7 @@
           </div>
         </nuxt-link>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>
 
@@ -63,7 +66,7 @@
 import blogDefinition from './blog-definition'
 
 export default {
-  name: 'IndexPage',
+  name: 'BlogIndex',
   data: () => ({
     blogDefinition,
     pageNumber: 1,

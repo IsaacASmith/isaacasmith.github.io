@@ -24,7 +24,7 @@
         </div>
       </nuxt-link>
       <nuxt-link to="/projects">
-        <div class="inline text-base md:text-xl px-2 md:px-3 py-4 hover:underline">
+        <div class="text-primary inline text-base md:text-xl px-2 md:px-3 py-4 hover:underline">
           Projects
         </div>
       </nuxt-link>
