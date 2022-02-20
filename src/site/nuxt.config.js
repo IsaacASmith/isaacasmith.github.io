@@ -43,11 +43,7 @@ export default {
       {
         property: 'twitter:creator',
         content: '@isaac_smith3',
-      },
-      {
-        property: 'twitter:image:alt',
-        content: 'A person on their smartphone shopping for gifts to share',
-      },
+      }
     ],
     script: [
       {
