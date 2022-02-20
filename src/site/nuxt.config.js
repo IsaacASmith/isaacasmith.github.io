@@ -1,6 +1,8 @@
 export default {
   target: 'static',
-
+  sitemap: {
+    hostname: 'https://isaacsmith.us',
+  },
   head: {
     title: 'Home | Isaac Smith',
     meta: [
@@ -43,7 +45,7 @@ export default {
       {
         property: 'twitter:creator',
         content: '@isaac_smith3',
-      }
+      },
     ],
     script: [
       {
@@ -51,7 +53,7 @@ export default {
         src: 'https://cdn.usefathom.com/script.js',
         defer: true,
         'data-site': 'XGBKSFUH',
-        'data-spa': true
+        'data-spa': true,
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
