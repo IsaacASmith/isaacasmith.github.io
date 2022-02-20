@@ -3,6 +3,7 @@ export default {
   sitemap: {
     hostname: 'https://isaacsmith.us',
   },
+  buildDir: '../../docs',
   head: {
     title: 'Home | Isaac Smith',
     meta: [
