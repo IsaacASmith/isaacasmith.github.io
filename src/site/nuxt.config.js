@@ -69,7 +69,7 @@ export default {
 
   buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/tailwindcss'],
 
-  modules: ['@nuxtjs/pwa'],
+  modules: ['@nuxtjs/pwa', '@nuxtjs/sitemap'],
 
   pwa: {
     manifest: {
