@@ -2,6 +2,7 @@ export default {
   projects: [
     {
       thumbnail: require('~/assets/img/projects/musinsights.png'),
+      thumbnailAlt: 'Musinsights webpage screenshot',
       title: 'Musinsights',
       shortDesc:
         'A tool to pull listening analytics from the Spotify API and summarize your listening habits. Uses an azure function to compute insights.',

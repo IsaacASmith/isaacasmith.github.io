@@ -16,6 +16,7 @@
     <section class="sm:mx-3">
       <div class="grid grid-cols-12 gap-6 mt-8 mx-3 md:mx-0">
         <input
+          v-model="searchText"
           placeholder="Search projects..."
           class="col-span-12 sm:col-span-4 py-2 px-3 outline-none"
         />
@@ -30,17 +31,13 @@
       </div>
       <div class="grid grid-cols-12 gap-6 mt-8">
         <a
-          v-for="project in projectsDefinition.projects"
+          v-for="project in displayedProjects"
           :key="project.prodUrl"
           :href="project.prodUrl"
           target="_blank"
           class="col-span-12 sm:col-span-6 bg-white rounded mx-2 sm:mx-0 mb-5 sm:mb-0 shadow"
         >
-          <img
-            :src="project.thumbnail"
-            :alt="project.thumbnailAlt"
-            class="block"
-          />
+          <img :src="project.thumbnail" :alt="project.thumbnailAlt" />
           <div class="p-4 sm:p-6">
             <div class="text-xl font-semibold">
               {{ project.title }}
@@ -57,8 +54,12 @@
             <div class="mt-1">
               {{ project.shortDesc }}
             </div>
-            <div class="mt-3 mb-1 text-primary underline">
-              <a :href="project.codeUrl" target="_blank"
+            <div class="mt-3 mb-1">
+              <a
+                v-if="project.codeUrl"
+                :href="project.codeUrl"
+                target="_blank"
+                class="text-primary underline"
                 >Check out the code
                 <img
                   src="~/assets/img/external-link.svg"
@@ -66,6 +67,7 @@
                   width="12"
                   class="inline ml-2 mb-1"
               /></a>
+              <div v-else>.</div>
             </div>
             <div class="flex flex-row flex-wrap mt-3">
               <div
@@ -90,6 +92,22 @@ export default {
   name: 'ProjectsIndex',
   data: () => ({
     projectsDefinition,
+    searchText: '',
   }),
+  computed: {
+    displayedProjects() {
+      if (!this.searchText) {
+        return this.projectsDefinition.projects
+      }
+      return this.projectsDefinition.projects.filter((project) => {
+        const searchCompare = this.searchText.toLowerCase()
+        return (
+          project.title.toLowerCase().includes(searchCompare) ||
+          project.shortDesc.toLowerCase().includes(searchCompare) ||
+          project.prodUrl.toLowerCase().includes(searchCompare)
+        )
+      })
+    },
+  },
 }
 </script>
