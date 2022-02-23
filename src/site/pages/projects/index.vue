@@ -86,7 +86,7 @@
 </template>
 
 <script>
-import projectsDefinition from './projects-definition.js'
+import projectsDefinition from '../../plugins/projects-definition.js'
 
 export default {
   name: 'ProjectsIndex',
@@ -94,6 +94,19 @@ export default {
     projectsDefinition,
     searchText: '',
   }),
+  head() {
+    return {
+      title: 'Projects | Isaac Smith',
+      meta: [
+        {
+          hid: 'projects-description',
+          name: 'description',
+          content:
+            "Welcome to the mad science lab! Get a behind the scenes look at what I'm building in my free time.",
+        },
+      ],
+    }
+  },
   computed: {
     displayedProjects() {
       if (!this.searchText) {

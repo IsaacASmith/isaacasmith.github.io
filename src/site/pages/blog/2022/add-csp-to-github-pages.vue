@@ -12,7 +12,7 @@
 
 <script>
 import PostLayout from '@/components/post-layout.vue'
-import blogDefinition from '@/pages/blog/blog-definition.js'
+import blogDefinition from '~/plugins/blog-definition.js'
 
 export default {
   components: { PostLayout },
