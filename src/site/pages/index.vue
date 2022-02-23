@@ -55,6 +55,19 @@
 <script>
 export default {
   name: 'IndexPage',
+  head() {
+    return {
+      title: 'Isaac Smith | Home',
+      meta: [
+        {
+          hid: 'blog-description',
+          name: 'description',
+          content:
+            "Hi! I'm Isaac. I'm a software engineering consultant in Sioux Falls, South Dakota",
+        },
+      ],
+    }
+  },
 }
 </script>
 

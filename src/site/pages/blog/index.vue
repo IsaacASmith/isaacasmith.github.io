@@ -14,9 +14,7 @@
         come from my experiences as a software engineering consultant working
         with a variety of businesses across many sectors of the economy.
       </div>
-      <div class="mt-16 text-3xl">
-        Coming Soon!
-      </div>
+      <div class="mt-16 text-3xl">Coming Soon!</div>
     </section>
     <!-- <section class="sm:mx-3">
       <div class="grid grid-cols-12 gap-4 mt-8 mx-3 md:mx-0">
@@ -63,7 +61,7 @@
 </template>
 
 <script>
-import blogDefinition from './blog-definition'
+import blogDefinition from '~/plugins/blog-definition'
 
 export default {
   name: 'BlogIndex',
@@ -72,6 +70,19 @@ export default {
     pageNumber: 1,
     pageSize: 10,
   }),
+  head() {
+    return {
+      title: 'Blog | Isaac Smith',
+      meta: [
+        {
+          hid: 'blog-description',
+          name: 'description',
+          content:
+            'I write about all things software development, the relationship between technology and business, and continual improvement.',
+        },
+      ],
+    }
+  },
   computed: {
     pageCount() {
       return this.blogDefinition.length / this.pageSize

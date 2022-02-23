@@ -7,16 +7,11 @@ export default {
     dir: '../../docs'
   },
   head: {
-    title: 'Home | Isaac Smith',
+    title: 'Isaac Smith | Software Engineering',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'format-detection', content: 'telephone=no' },
-      {
-        name: 'description',
-        content:
-          "Hi! I'm Isaac. I'm a software engineering consultant in Sioux Falls, South Dakota.",
-      },
       {
         property: 'og:title',
         content: 'Isaac Smith',
