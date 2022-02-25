@@ -154,7 +154,7 @@ export default {
   computed: {
     cspPostDefinition() {
       return this.blogDefinition.posts.find(
-        (post) => post.url === 'blog/2022/add-csp-to-github-pages'
+        (post) => post.url === '/blog/2022/add-csp-to-github-pages'
       )
     },
   },
