@@ -2,7 +2,7 @@
   <div class="bg-grey">
     <NavBar class="fixed inset-x-0 top-0 z-20" />
     <div
-      class="max-w-4xl mx-auto px-1 sm:px-5 md:px-6 py-28 md:py-40"
+      class="max-w-4xl mx-auto px-1 sm:px-5 md:px-6 pt-28 pb-20 md:pt-40 md:pb-32"
     >
       <Nuxt />
     </div>

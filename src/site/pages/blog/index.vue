@@ -14,11 +14,11 @@
         come from my experiences as a software engineering consultant working
         with a variety of businesses across many sectors of the economy.
       </div>
-      <div class="mt-16 text-3xl">Coming Soon!</div>
     </section>
-    <!-- <section class="sm:mx-3">
-      <div class="grid grid-cols-12 gap-4 mt-8 mx-3 md:mx-0">
+    <section class="sm:mx-3">
+      <div class="grid grid-cols-12 gap-6 mt-8 mx-3 md:mx-0">
         <input
+          v-model="searchText"
           placeholder="Search posts..."
           class="col-span-12 sm:col-span-4 py-2 px-3 outline-none"
         />
@@ -31,14 +31,15 @@
           class="hidden sm:inline col-span-12 sm:col-span-4 py-2 px-3 outline-none"
         />
       </div>
-      <div class="grid grid-cols-12 gap-4 mt-8">
+      <div class="grid grid-cols-12 gap-6 mt-8">
         <nuxt-link
-          v-for="post in blogDefinition.posts"
+          v-for="post in displayedBlogs"
           :key="post.url"
           :to="post.url"
           class="col-span-12 sm:col-span-6 bg-white rounded p-4 sm:p-6 mx-2 sm:mx-0"
         >
-          <div class="text-xl font-semibold">{{ post.title }}</div>
+          <img :src="post.thumbnail" class="m-auto"/>
+          <div class="text-xl font-semibold mt-2">{{ post.title }}</div>
           <div class="text-sm text-gray-600 mt-1">
             {{ post.publishDate | formatMonthYear }}
           </div>
@@ -56,7 +57,7 @@
           </div>
         </nuxt-link>
       </div>
-    </section> -->
+    </section>
   </div>
 </template>
 
@@ -67,6 +68,7 @@ export default {
   name: 'BlogIndex',
   data: () => ({
     blogDefinition,
+    searchText: '',
     pageNumber: 1,
     pageSize: 10,
   }),
@@ -88,7 +90,18 @@ export default {
       return this.blogDefinition.length / this.pageSize
     },
     displayedBlogs() {
-      return this.blogDefinition
+      const result = this.blogDefinition.posts.filter(post => post.url)
+      if (!this.searchText) {
+        return result
+      }
+      return result.filter((blog) => {
+        const searchCompare = this.searchText.toLowerCase()
+        return (
+          blog.title.toLowerCase().includes(searchCompare) ||
+          blog.shortDesc.toLowerCase().includes(searchCompare) ||
+          blog.url.toLowerCase().includes(searchCompare)
+        )
+      })
     },
   },
 }
