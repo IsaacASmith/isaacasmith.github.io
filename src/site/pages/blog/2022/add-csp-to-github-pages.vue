@@ -55,10 +55,6 @@
         just like using the header-based approach.
       </p>
       <p class="mb-6">
-        We can also specify multiple CSP meta tags to accomplish specific needs,
-        just like using the header-based approach.
-      </p>
-      <p class="mb-6">
         Here is a more complete example of what the head of our HTML document 
         might look like.
       </p>
@@ -83,7 +79,7 @@
         'stealyourdata.css', even though our CSP should be blocking it.
       </p>
       <Gist
-        gist="IsaacASmith/5a12969f6c25ae30d41835485659ea4d"
+        gist="IsaacASmith/babc73971b7cc395838fc6b03daad66d"
         class="mb-6"
         :height="290"
       />
