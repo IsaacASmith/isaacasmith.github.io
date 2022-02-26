@@ -4,7 +4,7 @@ export default {
     hostname: 'https://isaacsmith.us',
   },
   generate: {
-    dir: '../../docs'
+    dir: './dist'
   },
   head: {
     title: 'Isaac Smith | Software Engineering',
@@ -45,7 +45,7 @@ export default {
         content: '@isaac_smith3',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
+      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
   },
 
   css: [],
