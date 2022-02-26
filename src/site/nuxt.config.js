@@ -45,15 +45,6 @@ export default {
         content: '@isaac_smith3',
       },
     ],
-    script: [
-      {
-        hid: 'fathom',
-        src: 'https://cdn.usefathom.com/script.js',
-        defer: true,
-        'data-site': 'XGBKSFUH',
-        'data-spa': true,
-      },
-    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
   },
 
