@@ -5,7 +5,6 @@
       :publish-date="cspPostDefinition.date"
       :tags="cspPostDefinition.tags"
       :thumbnail="cspPostDefinition.thumbnail"
-      :thumbnial-height="cspPostDefinition.thumbnailHeight"
     >
       <p class="mb-6">
         Content security policies (CSPs) have been around for years and are a
@@ -22,19 +21,18 @@
         headers. The following solution will work for any hosting environment
         where we can’t modify response headers.
       </p>
-      <p class="mb-2 text-xl">
+      <h2 class="mb-2 text-xl">
         <strong>How to Implement</strong>
+      </h2>
+      <p class="mb-6">
+        Enter the CSP
+        <strong>&lt;meta&gt;</strong> tag.
       </p>
-      <p class="mb-6">Enter the CSP <strong>&lt;meta&gt;</strong> tag.</p>
       <p class="mb-6">
         When modifying response headers is not an option, we have an alternative
         method for adding a CSP: using a meta tag.
       </p>
-      <Gist
-        gist="IsaacASmith/32646ca2d62d16fd86d6bb8705b00a49"
-        class="mb-6"
-        :height="90"
-      />
+      <Gist gist="IsaacASmith/32646ca2d62d16fd86d6bb8705b00a49" class="mb-6" :height="90" />
       <p class="mb-6">
         This meta tag will go in the &lt;head&gt; element of the page, before
         our content, links, and scripts. The ‘http-equiv’ value is a constant,
@@ -47,78 +45,61 @@
           href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"
           rel="nofollow"
           target="_blank"
-          >here</a
-        >.
+        >here</a>.
       </p>
       <p class="mb-6">
         We can also specify multiple CSP meta tags to accomplish specific needs,
         just like using the header-based approach.
       </p>
       <p class="mb-6">
-        Here is a more complete example of what the head of our HTML document 
+        Here is a more complete example of what the head of our HTML document
         might look like.
       </p>
-      <Gist
-        gist="IsaacASmith/5a12969f6c25ae30d41835485659ea4d"
-        class="mb-6"
-        :height="300"
-      />
-      <p class="mb-2 text-xl">
+      <Gist gist="IsaacASmith/5a12969f6c25ae30d41835485659ea4d" class="mb-6" :height="300" />
+      <h2 class="mb-2 text-xl">
         <strong>Gotchas</strong>
-      </p>
+      </h2>
       <p class="mb-6">
         There are a few issues we may run in to when implementing a CSP using
         the meta tag.
       </p>
-      <p class="mb-2 text-lg">
+      <h3 class="mb-2 text-lg">
         <strong>Including content before the CSP meta tag</strong>
-      </p>
+      </h3>
       <p class="mb-6">
         If any content links appear before the CSP meta tag, the CSP will not
         apply to them. For example, the following sample will load the CSS file
         'stealyourdata.css', even though our CSP should be blocking it.
       </p>
-      <Gist
-        gist="IsaacASmith/babc73971b7cc395838fc6b03daad66d"
-        class="mb-6"
-        :height="290"
-      />
-      <p class="mb-2 text-lg">
+      <Gist gist="IsaacASmith/babc73971b7cc395838fc6b03daad66d" class="mb-6" :height="290" />
+      <h3 class="mb-2 text-lg">
         <strong>Using CSP directives not supported in meta tags</strong>
-      </p>
+      </h3>
       <p class="mb-6">
         There is a short list of CSP directives that will not work when
         delivered using a meta tag. We will want to make sure our site does not
         rely on these directives to operate. The unsupported directives are:
-        <ul class="list-disc ml-5 mt-1">
-          <li>
-            report-uri
-          </li>
-          <li>
-            frame-ancestors
-          </li>
-          <li>
-            sandbox
-          </li>
-        </ul>
       </p>
-      <p class="flex flex-row justify-center mt-4 mb-8 text-xl font-bold">
-        . . .
-      </p>
-      <p class="mb-2 text-xl">
+      <ul class="list-disc ml-5 mt-1">
+        <li>report-uri</li>
+        <li>frame-ancestors</li>
+        <li>sandbox</li>
+      </ul>
+      <p class="flex flex-row justify-center mt-4 mb-8 text-xl font-bold">. . .</p>
+      <h2 class="mb-2 text-xl">
         <strong>Wrap Up</strong>
-      </p>
+      </h2>
       <p class="mb-6">
-        While delivering content security policies using a response header is 
-        the preferred method, we can still meet our needs in environments where 
-        we cannot control response headers. If you are interested in learning more 
-        about content security policies, see the <a
+        While delivering content security policies using a response header is
+        the preferred method, we can still meet our needs in environments where
+        we cannot control response headers. If you are interested in learning more
+        about content security policies, see the
+        <a
           class="underline"
           href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"
           rel="nofollow"
           target="_blank"
-          >official docs</a
-        >.
+        >official docs</a>.
       </p>
     </PostLayout>
   </div>
