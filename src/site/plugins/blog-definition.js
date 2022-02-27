@@ -1,6 +1,15 @@
 export default {
   posts: [
     {
+      thumbnail: require('~/assets/img/blog/2022/ef-vs-dapper/icon.svg'),
+      title: 'Choosing Between Entity Framework and Dapper',
+      shortDesc:
+        'Dapper and EF are two of the most popular ORMs in the .NET ecosystem. There are various reasons to choose one over the other  ...',
+      url: '/blog/2022/entity-framework-vs-dapper',
+      tags: ['Technical', '.NET', 'SQL'],
+      publishDate: new Date(2022, 1, 27),
+    },
+    {
       thumbnail: require('~/assets/img/blog/2022/github-csp/icon.svg'),
       title: 'Adding a Content Security Policy to Your GitHub Pages Site',
       shortDesc:

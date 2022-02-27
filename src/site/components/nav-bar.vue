@@ -1,5 +1,5 @@
 <template>
-  <nav class="py-4 md:py-5 px-4 md:px-6 bg-white flex flex-row justify-between">
+  <nav class="py-4 md:py-5 px-4 md:px-6 bg-white flex flex-row justify-between shadow-sm">
     <nuxt-link to="/" class="flex flex-row justify-center items-center">
       <img
         src="~/assets/img/me.jpg"
