@@ -1,7 +1,7 @@
 export default {
   target: 'static',
   sitemap: {
-    hostname: 'https://isaacsmith.us',
+    hostname: 'https://www.isaacsmith.us',
   },
   generate: {
     dir: './dist'
@@ -26,7 +26,7 @@ export default {
       },
       {
         property: 'og:url',
-        content: 'https://isaacsmith.us',
+        content: 'https://www.isaacsmith.us',
       },
       {
         property: 'twitter:title',

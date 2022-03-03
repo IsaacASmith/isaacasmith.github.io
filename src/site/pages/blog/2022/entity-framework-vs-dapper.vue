@@ -216,7 +216,7 @@ export default {
   }),
   head() {
     return {
-      title: 'Entity Framework vs Dapper',
+      title: 'Entity Framework vs Dapper - Which .NET ORM Should I Use?',
       meta: [
         {
           hid: 'ef-vs-dapper-description',
