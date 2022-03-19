@@ -1,12 +1,13 @@
 export default function (context) {
+    console.log(context);
     if (process.client) {
-        return postPageView();
+        return postPageView(context);
     }
 }
 
-function postPageView() {
-    // const pageViewURL = 'http://localhost:7071/api/view'
-    const pageViewURL = 'https://fa-metr-personal-site.azurewebsites.net/api/view'
+function postPageView(context) {
+    const pageViewURL = 'http://localhost:7071/api/view'
+    // const pageViewURL = 'https://fa-metr-personal-site.azurewebsites.net/api/view'
 
     const getClientId = () => ''
         .concat('3286f0be-14f8').concat('|')
@@ -27,9 +28,9 @@ function postPageView() {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            path: window.location.pathname,
-            pageTitle: document.title,
+            path: context.route.fullPath,
             referrer: document.referrer,
+            internalReferrer: context.from.fullPath,
             screenWidth: window.screen.width,
             client: hashCode(getClientId()),
             utm: {

@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
@@ -35,26 +33,21 @@ namespace SanityMetrics
           updatedClient = computeSHA256Hash($"{viewData.Client}|{ipHeaderVals.FirstOrDefault()}");
         }
 
-        Activity.Current?.AddBaggage("viewData", JsonSerializer.Serialize(viewData, new JsonSerializerOptions
-        {
-          PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-        }));
-
-        using var scope = _logger.BeginScope(new
+        _logger.LogInformation(new EventId(10001, "pageView"), JsonSerializer.Serialize(new
         {
           viewData.Path,
-          viewData.PageTitle,
           viewData.Referrer,
+          viewData.InternalReferrer,
+          ScreenSize = screenSize,
           Client = updatedClient,
-          UTMData = new {
+          UTMData = new
+          {
             viewData.UTMData?.Medium,
             viewData.UTMData?.Source,
             viewData.UTMData?.Campaign,
             viewData.UTMData?.Content,
           }
-        });
-        _logger.LogInformation("pageView");
-        scope.Dispose();
+        }));
 
         var response = req.CreateResponse(HttpStatusCode.OK);
         return response;
@@ -88,6 +81,7 @@ namespace SanityMetrics
     public string Path { get; set; }
     public string PageTitle { get; set; }
     public string Referrer { get; set; }
+    public string InternalReferrer { get; set; }
     public int Client { get; set; }
     public int ScreenWidth { get; set; }
 
