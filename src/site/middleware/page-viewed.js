@@ -1,5 +1,4 @@
 export default function (context) {
-    console.log(context);
     if (process.client) {
         return postPageView(context);
     }
