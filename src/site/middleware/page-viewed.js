@@ -6,8 +6,8 @@ export default function (context) {
 }
 
 function postPageView(context) {
-    const pageViewURL = 'http://localhost:7071/api/view'
-    // const pageViewURL = 'https://fa-metr-personal-site.azurewebsites.net/api/view'
+    // const pageViewURL = 'http://localhost:7071/api/view'
+    const pageViewURL = 'https://fa-metr-personal-site.azurewebsites.net/api/view'
 
     const getClientId = () => ''
         .concat('3286f0be-14f8').concat('|')
