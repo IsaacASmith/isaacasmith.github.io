@@ -45,7 +45,11 @@ export default {
         content: '@isaac_smith3',
       },
     ],
-      link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
+  },
+
+  router: {
+    middleware: 'page-viewed'
   },
 
   css: [],
