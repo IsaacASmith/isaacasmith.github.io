@@ -60,7 +60,7 @@ export default {
       title: 'Isaac Smith | Home',
       meta: [
         {
-          hid: 'blog-description',
+          hid: 'top-level-description',
           name: 'description',
           content:
             "Hi! I'm Isaac. I'm a software engineering consultant in Sioux Falls, South Dakota",
