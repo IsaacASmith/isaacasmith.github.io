@@ -2,7 +2,7 @@
   <div>
     <PostLayout
       :title="postDefinition.title"
-      :publish-date="postDefinition.date"
+      :publish-date="postDefinition.publishDate"
       :tags="postDefinition.tags"
       :thumbnail="postDefinition.thumbnail"
     >
@@ -167,7 +167,9 @@
         if your database is missing foreign keys. While it would be best to get
         foreign keys added, it’s not always an option.
       </p>
-      <p class="text-xl font-semibold">Is database performance a major concern?</p>
+      <p class="text-xl font-semibold">
+        Is database performance a major concern?
+      </p>
       <p class="mb-4">If yes, dapper is a good fit.</p>
       <p class="mb-8">
         While EF is catching up to dapper in performance, dapper still holds the
@@ -205,6 +207,7 @@
     </PostLayout>
   </div>
 </template>
+
 <script>
 import PostLayout from '@/components/post-layout.vue'
 import blogDefinition from '~/plugins/blog-definition.js'

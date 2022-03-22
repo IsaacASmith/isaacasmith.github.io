@@ -1,6 +1,15 @@
 export default {
   posts: [
     {
+      thumbnail: require('~/assets/img/blog/2022/aspnet-global-auth/icon.svg'),
+      title: 'Securing ASP.NET Apps With Global Authorization Filters',
+      shortDesc:
+        'Let\'s flip our authentication thinking on its head and enforce the authentication requirement by default. This eliminates the ...',
+      url: '/blog/2022/aspnet-global-authorization-filters',
+      tags: ['Technical', 'ASP.NET', 'Security'],
+      publishDate: new Date(2022, 2, 20),
+    },
+    {
       thumbnail: require('~/assets/img/blog/2022/ef-vs-dapper/icon.svg'),
       title: 'Choosing Between Entity Framework and Dapper',
       shortDesc:

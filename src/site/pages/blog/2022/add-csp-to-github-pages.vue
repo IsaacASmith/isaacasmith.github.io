@@ -2,7 +2,7 @@
   <div>
     <PostLayout
       :title="cspPostDefinition.title"
-      :publish-date="cspPostDefinition.date"
+      :publish-date="cspPostDefinition.publishDate"
       :tags="cspPostDefinition.tags"
       :thumbnail="cspPostDefinition.thumbnail"
     >
