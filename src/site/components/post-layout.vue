@@ -8,7 +8,7 @@
         </div>
         <br />
       </div>
-      <div class="flex flex-col items-center">
+      <div class="flex flex-col items-center mb-4">
         <img :src="thumbnail" class="pb-6" />
       </div>
       <div class="leading-8 text-lg font-normal">
