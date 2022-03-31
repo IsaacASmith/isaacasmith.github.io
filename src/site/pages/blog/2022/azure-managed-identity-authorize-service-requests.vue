@@ -2,7 +2,7 @@
   <div>
     <PostLayout
       :title="postDefinition.title"
-      :publish-date="postDefinition.date"
+      :publish-date="postDefinition.publishDate"
       :tags="postDefinition.tags"
       :thumbnail="postDefinition.thumbnail"
     >
