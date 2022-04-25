@@ -23,12 +23,13 @@ namespace SanityMetrics
       try
       {
         var viewData = await req.ReadFromJsonAsync<ViewData>();
+        viewData.LowerCaseAllProps();
+
         string updatedClient = viewData.Client.ToString();
 
         string screenSize = getScreenSize(viewData.ScreenWidth);
 
-        var hasReqIp = req.Headers.TryGetValues("X-Forwarded-For", out IEnumerable<string> ipHeaderVals);
-        if (hasReqIp)
+        if (req.Headers.TryGetValues("X-Forwarded-For", out IEnumerable<string> ipHeaderVals))
         {
           updatedClient = computeSHA256Hash($"{viewData.Client}|{ipHeaderVals.FirstOrDefault()}");
         }
@@ -90,6 +91,7 @@ namespace SanityMetrics
       Path = Path?.ToLower();
       PageTitle = PageTitle?.ToLower();
       Referrer = Referrer?.ToLower();
+      InternalReferrer = InternalReferrer?.ToLower();
     }
 
     public UTMData UTMData { get; set; }
