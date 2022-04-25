@@ -9,23 +9,26 @@
         class="mr-4 md:mr-5 inline profile-img"
       />
     </div>
-    <section
-      class="flex flex-col justify-center items-center mt-4 sm:max-w-sm max-w-xl m-auto"
-    >
+    <section class="flex flex-col justify-center items-center mt-4 sm:max-w-sm max-w-xl m-auto">
       <h1 class="text-3xl">Hi! I'm Isaac.</h1>
       <div class="mt-1">I flip bits to solve problems.</div>
     </section>
-    <section class="grid grid-cols-12 gap-8 mt-10 sm:mt-20 sm:mx-3">
+    <section>
+      <div class="flex flex-col items-center mt-10">
+        <a href="mailto:hey@isaacsmith.us?subject=Heyo!">
+          <div class="bg-primary text-white p-4 rounded text-xl flex flex-row">
+            <span class="mr-3 font-semibold">Let's Connect!</span>
+            <img src="~/assets/img/send.svg" height="28" width="28" alt="Send email" />
+          </div>
+        </a>
+      </div>
+    </section>
+    <section class="grid grid-cols-12 gap-8 mt-12 sm:mt-14 sm:mx-3">
       <nuxt-link
         to="/blog"
         class="col-span-12 sm:col-span-6 bg-white rounded p-4 sm:p-6 pt-12 flex flex-col items-center mx-2 sm:mx-0"
       >
-        <img
-          src="~/assets/img/blog.svg"
-          width="90"
-          alt="Book icon"
-          class="block"
-        />
+        <img src="~/assets/img/blog.svg" width="90" alt="Book icon" class="block" />
         <div class="text-xl font-semibold mt-5">The Blog</div>
         <div class="mt-4">
           I write about all things software development, the relationship
@@ -36,12 +39,7 @@
         to="/projects"
         class="col-span-12 sm:col-span-6 bg-white rounded p-4 sm:p-6 pt-12 flex flex-col items-center mx-2 sm:mx-0"
       >
-        <img
-          src="~/assets/img/projects.svg"
-          width="100"
-          alt="Science beaker icon"
-          class="block"
-        />
+        <img src="~/assets/img/projects.svg" width="100" alt="Science beaker icon" class="block" />
         <div class="text-xl font-semibold mt-5">Projects</div>
         <div class="mt-4">
           Enter the mad science lab. Get a behind the scenes look at what I'm
