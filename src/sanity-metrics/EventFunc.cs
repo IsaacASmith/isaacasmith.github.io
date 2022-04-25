@@ -51,15 +51,6 @@ namespace SanityMetrics
             }
         }
 
-        private string getScreenSize(int screenWidth)
-        {
-            if (screenWidth < 500)
-                return "Mobile";
-            if (screenWidth < 1000)
-                return "Tablet";
-            return "Desktop";
-        }
-
         private string computeSHA256Hash(string val)
         {
             var hashBytes = SHA256.HashData(Encoding.ASCII.GetBytes(val));
