@@ -5,103 +5,115 @@ using System.Text.Json;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
+using sanity_metrics;
 
 namespace SanityMetrics
 {
-  public class ViewFunc
-  {
-    private readonly ILogger _logger;
-
-    public ViewFunc(ILoggerFactory loggerFactory)
+    public class ViewFunc
     {
-      _logger = loggerFactory.CreateLogger<ViewFunc>();
-    }
+        private readonly ILogger _logger;
 
-    [Function("view")]
-    public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req)
-    {
-      try
-      {
-        var viewData = await req.ReadFromJsonAsync<ViewData>();
-        viewData.LowerCaseAllProps();
-
-        string updatedClient = viewData.Client.ToString();
-
-        string screenSize = getScreenSize(viewData.ScreenWidth);
-
-        if (req.Headers.TryGetValues("X-Forwarded-For", out IEnumerable<string> ipHeaderVals))
+        public ViewFunc(ILoggerFactory loggerFactory)
         {
-          updatedClient = computeSHA256Hash($"{viewData.Client}|{ipHeaderVals.FirstOrDefault()}");
+            _logger = loggerFactory.CreateLogger<ViewFunc>();
         }
 
-        _logger.LogInformation(new EventId(10001, "pageView"), JsonSerializer.Serialize(new
+        [Function("view")]
+        public async Task<HttpResponseData> Run([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req)
         {
-          viewData.Path,
-          viewData.Referrer,
-          viewData.InternalReferrer,
-          ScreenSize = screenSize,
-          Client = updatedClient,
-          UTMData = new
-          {
-            viewData.UTMData?.Medium,
-            viewData.UTMData?.Source,
-            viewData.UTMData?.Campaign,
-            viewData.UTMData?.Content,
-          }
-        }));
+            try
+            {
+                var response = req.CreateResponse(HttpStatusCode.OK);
 
-        var response = req.CreateResponse(HttpStatusCode.OK);
-        return response;
-      }
-      catch (Exception ex)
-      {
-        _logger.LogError(ex, "Error logging view.");
-        var response = req.CreateResponse(HttpStatusCode.OK);
-        return response;
-      }
+                var searchEngineCrawlerCheckResult = SearchEngineChecker.IsRequestFromSearchEngineCrawler(req);
+                if (searchEngineCrawlerCheckResult.IsFromSearchEngine)
+                {
+                    _logger.LogInformation(new EventId(10003, "searchEngineCrawler"), JsonSerializer.Serialize(new
+                    {
+                        SearchEngine = searchEngineCrawlerCheckResult.SearchEngine
+                    }));
+                    return response;
+                }
+
+                var viewData = await req.ReadFromJsonAsync<ViewData>();
+                viewData.LowerCaseAllProps();
+
+                string updatedClient = viewData.Client.ToString();
+
+                string screenSize = getScreenSize(viewData.ScreenWidth);
+
+                if (req.Headers.TryGetValues("X-Forwarded-For", out IEnumerable<string> ipHeaderVals))
+                {
+                    updatedClient = computeSHA256Hash($"{viewData.Client}|{ipHeaderVals.FirstOrDefault()}");
+                }
+
+                _logger.LogInformation(new EventId(10001, "pageView"), JsonSerializer.Serialize(new
+                {
+                    viewData.Path,
+                    viewData.Referrer,
+                    viewData.InternalReferrer,
+                    ScreenSize = screenSize,
+                    Client = updatedClient,
+                    UTMData = new
+                    {
+                        viewData.UTMData?.Medium,
+                        viewData.UTMData?.Source,
+                        viewData.UTMData?.Campaign,
+                        viewData.UTMData?.Content,
+                    }
+                }));
+
+                return response;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error logging view.");
+                var response = req.CreateResponse(HttpStatusCode.OK);
+                return response;
+            }
+        }
+
+        private string getScreenSize(int screenWidth)
+        {
+            if (screenWidth < 500)
+                return "Mobile";
+            if (screenWidth < 1000)
+                return "Tablet";
+            return "Desktop";
+        }
+
+        private string computeSHA256Hash(string val)
+        {
+            var hashBytes = SHA256.HashData(Encoding.ASCII.GetBytes(val));
+            return BitConverter.ToString(hashBytes).Replace("-", "");
+        }
     }
 
-    private string getScreenSize(int screenWidth)
+    public class ViewData
     {
-      if (screenWidth < 500)
-        return "Mobile";
-      if (screenWidth < 1000)
-        return "Tablet";
-      return "Desktop";
+        public string Path { get; set; }
+        public string PageTitle { get; set; }
+        public string Referrer { get; set; }
+        public string InternalReferrer { get; set; }
+        public int Client { get; set; }
+        public int ScreenWidth { get; set; }
+
+        public void LowerCaseAllProps()
+        {
+            Path = Path?.ToLower();
+            PageTitle = PageTitle?.ToLower();
+            Referrer = Referrer?.ToLower();
+            InternalReferrer = InternalReferrer?.ToLower();
+        }
+
+        public UTMData UTMData { get; set; }
     }
 
-    private string computeSHA256Hash(string val)
+    public class UTMData
     {
-      var hashBytes = SHA256.HashData(Encoding.ASCII.GetBytes(val));
-      return BitConverter.ToString(hashBytes).Replace("-", "");
+        public string Medium { get; set; }
+        public string Source { get; set; }
+        public string Campaign { get; set; }
+        public string Content { get; set; }
     }
-  }
-
-  public class ViewData
-  {
-    public string Path { get; set; }
-    public string PageTitle { get; set; }
-    public string Referrer { get; set; }
-    public string InternalReferrer { get; set; }
-    public int Client { get; set; }
-    public int ScreenWidth { get; set; }
-
-    public void LowerCaseAllProps()
-    {
-      Path = Path?.ToLower();
-      PageTitle = PageTitle?.ToLower();
-      Referrer = Referrer?.ToLower();
-      InternalReferrer = InternalReferrer?.ToLower();
-    }
-
-    public UTMData UTMData { get; set; }
-  }
-
-  public class UTMData
-  {
-    public string Medium { get; set; }
-    public string Source { get; set; }
-    public string Campaign { get; set; }
-    public string Content { get; set; }
-  }
 }

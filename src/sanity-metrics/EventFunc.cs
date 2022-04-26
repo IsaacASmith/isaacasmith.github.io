@@ -1,3 +1,4 @@
+using System.Net.Cache;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
@@ -22,6 +23,18 @@ namespace SanityMetrics
         {
             try
             {
+                var response = req.CreateResponse(HttpStatusCode.OK);
+
+                var searchEngineCrawlerCheckResult = SearchEngineChecker.IsRequestFromSearchEngineCrawler(req);
+                if (searchEngineCrawlerCheckResult.IsFromSearchEngine)
+                {
+                    _logger.LogInformation(new EventId(10003, "searchEngineCrawler"), JsonSerializer.Serialize(new
+                    {
+                        SearchEngine = searchEngineCrawlerCheckResult.SearchEngine
+                    }));
+                    return response;
+                }
+
                 var eventData = await req.ReadFromJsonAsync<EventData>();
                 string updatedClient = eventData.Client.ToString();
 
@@ -40,7 +53,6 @@ namespace SanityMetrics
                     }));
                 }
 
-                var response = req.CreateResponse(HttpStatusCode.OK);
                 return response;
             }
             catch (Exception ex)
