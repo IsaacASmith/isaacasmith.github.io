@@ -1,10 +1,10 @@
 export default {
   target: 'static',
   sitemap: {
-    hostname: 'https://isaacsmith.us',
+    hostname: 'https://www.isaacsmith.us',
   },
   generate: {
-    dir: '../../docs'
+    dir: './dist'
   },
   head: {
     title: 'Isaac Smith | Software Engineering',
@@ -26,7 +26,7 @@ export default {
       },
       {
         property: 'og:url',
-        content: 'https://isaacsmith.us',
+        content: 'https://www.isaacsmith.us',
       },
       {
         property: 'twitter:title',
@@ -46,6 +46,10 @@ export default {
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }],
+  },
+
+  router: {
+    middleware: 'page-viewed'
   },
 
   css: [],

@@ -34,7 +34,6 @@
           v-for="project in displayedProjects"
           :key="project.prodUrl"
           :href="project.prodUrl"
-          target="_blank"
           class="col-span-12 sm:col-span-6 bg-white rounded mx-2 sm:mx-0 mb-5 sm:mb-0 shadow"
         >
           <img :src="project.thumbnail" :alt="project.thumbnailAlt" />

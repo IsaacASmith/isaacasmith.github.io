@@ -13,8 +13,34 @@
 <script>
 import NavBar from '@/components/nav-bar.vue'
 import PageFooter from '@/components/page-footer.vue'
+import sanityMetrics from '~/plugins/sanity-metrics/sanity-metrics'
+
 export default {
   name: 'DefaultTemplate',
   components: { NavBar, PageFooter },
+  mounted() {
+    const context = {
+      route: this.$route,
+      from: {
+        path: '',
+      },
+    }
+    sanityMetrics.initSession()
+    sanityMetrics.logPageView(context)
+  },
+  created() {
+    if (process.client) {
+      // eslint-disable-next-line nuxt/no-globals-in-created
+      window.onbeforeunload = () => {
+        const context = {
+          route: this.$route,
+          from: {
+            path: '',
+          },
+        }
+        sanityMetrics.logSessionEnd(context)
+      }
+    }
+  },
 }
 </script>
