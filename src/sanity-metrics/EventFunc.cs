@@ -1,4 +1,3 @@
-using System.Net.Cache;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
@@ -25,13 +24,8 @@ namespace SanityMetrics
             {
                 var response = req.CreateResponse(HttpStatusCode.OK);
 
-                var searchEngineCrawlerCheckResult = SearchEngineChecker.IsRequestFromSearchEngineCrawler(req);
-                if (searchEngineCrawlerCheckResult.IsFromSearchEngine)
+                if (SearchEngineChecker.IsRequestFromSearchEngineCrawler(req).IsFromSearchEngine)
                 {
-                    _logger.LogInformation(new EventId(10003, "searchEngineCrawler"), JsonSerializer.Serialize(new
-                    {
-                        SearchEngine = searchEngineCrawlerCheckResult.SearchEngine
-                    }));
                     return response;
                 }
 
@@ -47,7 +41,8 @@ namespace SanityMetrics
                 {
                     _logger.LogInformation(new EventId(10002, "userEvent"), JsonSerializer.Serialize(new
                     {
-                        eventData.Page,
+                        Path = eventData.Path,
+                        eventData.EventName,
                         Client = updatedClient,
                         eventData.Data
                     }));
@@ -72,7 +67,8 @@ namespace SanityMetrics
 
     public class EventData
     {
-        public string Page { get; set; }
+        public string Path { get; set; }
+        public string EventName { get; set; }
         public int Client { get; set; }
         public object Data { get; set; }
     }

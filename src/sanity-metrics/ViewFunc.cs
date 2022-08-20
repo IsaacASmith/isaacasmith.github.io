@@ -5,7 +5,6 @@ using System.Text.Json;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
-using sanity_metrics;
 
 namespace SanityMetrics
 {
@@ -51,6 +50,7 @@ namespace SanityMetrics
                 {
                     viewData.Path,
                     viewData.Referrer,
+                    viewData.IsInternalNav,
                     viewData.InternalReferrer,
                     ScreenSize = screenSize,
                     Client = updatedClient,
@@ -94,6 +94,7 @@ namespace SanityMetrics
         public string Path { get; set; }
         public string PageTitle { get; set; }
         public string Referrer { get; set; }
+        public bool IsInternalNav { get; set; }
         public string InternalReferrer { get; set; }
         public int Client { get; set; }
         public int ScreenWidth { get; set; }

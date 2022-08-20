@@ -13,7 +13,7 @@
 <script>
 import NavBar from '@/components/nav-bar.vue'
 import PageFooter from '@/components/page-footer.vue'
-import pageViewedFunc from '@/middleware/page-viewed'
+import sanityMetrics from '~/plugins/sanity-metrics/sanity-metrics'
 
 export default {
   name: 'DefaultTemplate',
@@ -25,7 +25,22 @@ export default {
         path: '',
       },
     }
-    pageViewedFunc(context)
+    sanityMetrics.initSession()
+    sanityMetrics.logPageView(context)
+  },
+  created() {
+    if (process.client) {
+      // eslint-disable-next-line nuxt/no-globals-in-created
+      window.onbeforeunload = () => {
+        const context = {
+          route: this.$route,
+          from: {
+            path: '',
+          },
+        }
+        sanityMetrics.logSessionEnd(context)
+      }
+    }
   },
 }
 </script>
