@@ -1,6 +1,15 @@
 export default {
   posts: [
     {
+      thumbnail: require('~/assets/img/blog/2022/nuxt-seo-basics/icon.svg'),
+      title: 'Nuxt SEO: The Basics',
+      shortDesc:
+        'Nuxt is a great tool to do on-page SEO work. It lets you set titles, meta tags, and sends fully hydrated HTML to the browser fo...',
+      url: '/blog/2022/nuxt-seo-basics',
+      tags: ['Technical', 'Vue', 'Nuxt', 'SEO'],
+      publishDate: new Date(2022, 8, 7),
+    },
+    {
       thumbnail: require('~/assets/img/blog/2022/aspnet-global-auth/icon.svg'),
       title: 'Securing ASP.NET Apps With Global Authorization Filters',
       shortDesc:
