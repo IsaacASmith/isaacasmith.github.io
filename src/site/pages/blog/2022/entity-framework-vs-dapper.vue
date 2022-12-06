@@ -67,6 +67,7 @@
         Both libraries have a vast community behind them, which provide
         continuous updates as well as documentation and forums for getting help.
       </p>
+      <Affiliate />
       <h2 id="differences" class="mb-2 text-2xl font-bold">Differences</h2>
       <p class="mb-6">
         Although each library has a lot in common, there are a few developer and
@@ -210,10 +211,11 @@
 
 <script>
 import PostLayout from '@/components/post-layout.vue'
+import Affiliate from '@/components/affiliate.vue'
 import blogDefinition from '~/plugins/blog-definition.js'
 
 export default {
-  components: { PostLayout },
+  components: { PostLayout, Affiliate },
   data: () => ({
     blogDefinition,
   }),
