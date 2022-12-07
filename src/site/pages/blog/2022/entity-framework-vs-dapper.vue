@@ -63,12 +63,12 @@
       <p class="font-semibold">Pricing/Licensing</p>
       <p class="mb-6">Both libraries are free and open source.</p>
       <p class="font-semibold">Community Support</p>
-      <p class="mb-16">
+      <p class="mb-8">
         Both libraries have a vast community behind them, which provide
         continuous updates as well as documentation and forums for getting help.
       </p>
       <Affiliate />
-      <h2 id="differences" class="mb-2 text-2xl font-bold">Differences</h2>
+      <h2 id="differences" class="mb-2 mt-8 text-2xl font-bold">Differences</h2>
       <p class="mb-6">
         Although each library has a lot in common, there are a few developer and
         technical differences between the two ORMs to keep in mind.

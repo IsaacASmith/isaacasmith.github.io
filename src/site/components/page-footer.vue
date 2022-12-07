@@ -27,6 +27,10 @@
           </nuxt-link>
         </div>
       </div>
+      <div class="mt-16">
+        <div class="text-md">Affiliate Disclosure *</div>
+        <div class="text-sm">This website may earn a commission if you make a purchase through one of the links on the page.</div>
+      </div>
       <div class="mt-16 text-sm">
         Copyright 2022 |
         <nuxt-link to="isaacsmith.us" class="hover:underline"
