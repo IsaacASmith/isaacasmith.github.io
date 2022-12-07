@@ -11,9 +11,10 @@
       <div class="flex flex-col items-center mb-4">
         <img :src="thumbnail" class="pb-6" />
       </div>
-      <div class="leading-8 text-lg font-normal">
+      <div class="leading-8 text-lg font-normal mb-10">
         <slot></slot>
       </div>
+      <Affiliate/>
     </div>
     <div class="px-8 mt-10">
       <div class="text-xl font-bold mb-3">Tags</div>
@@ -31,24 +32,27 @@
 </template>
 
 <script>
+import Affiliate from './affiliate.vue';
+
 export default {
-  props: {
-    title: {
-      type: String,
-      required: true,
+    props: {
+        title: {
+            type: String,
+            required: true,
+        },
+        publishDate: {
+            type: Date,
+            default: () => new Date(),
+        },
+        tags: {
+            type: Array,
+            default: () => [],
+        },
+        thumbnail: {
+            type: String,
+            default: "",
+        },
     },
-    publishDate: {
-      type: Date,
-      default: () => new Date(),
-    },
-    tags: {
-      type: Array,
-      default: () => [],
-    },
-    thumbnail: {
-      type: String,
-      default: '',
-    },
-  },
+    components: { Affiliate }
 }
 </script>
