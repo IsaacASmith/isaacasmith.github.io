@@ -79,6 +79,8 @@ export default {
       client: this.getClientId(),
     })
 
+    console.log(eventBody)
+
     fetch(this.baseURL + '/event', {
       method: 'POST',
       headers: {
